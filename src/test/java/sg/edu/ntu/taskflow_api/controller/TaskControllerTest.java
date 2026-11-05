@@ -4,6 +4,8 @@ import sg.edu.ntu.taskflow_api.model.Staff;
 import sg.edu.ntu.taskflow_api.model.Task;
 import sg.edu.ntu.taskflow_api.model.TaskStatus;
 import sg.edu.ntu.taskflow_api.repository.TaskRepository;
+import sg.edu.ntu.taskflow_api.repository.StaffRepository;
+import sg.edu.ntu.taskflow_api.service.TaskService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,6 @@ import java.util.List;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
@@ -32,6 +33,12 @@ public class TaskControllerTest {
 
     @MockitoBean
     private TaskRepository taskRepository;
+
+    @MockitoBean
+    private TaskService taskService;
+
+    @MockitoBean
+    private StaffRepository staffRepository;
 
     /**
      * Test: GET /tasks should return list of tasks
