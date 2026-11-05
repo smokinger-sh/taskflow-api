@@ -2,25 +2,25 @@
 
 
 ## 📌 Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [API Documentation](#api-documentation)
-- [Configuration](#configuration)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
+- [Overview](#-overview)
+- [Features](#-features)
+- [Getting Started](#-getting-started)
+- [API Documentation](#-api-documentation)
+- [Configuration](#-configuration)
+- [Screenshots](#-screenshots)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
-## 📖 Overview(#overview)
+## 📖 Overview
 ### The Challenge: 
 Company does not have a tool for staff to log tasks.
 
 ### The Solution:
 - ✅ Allow creating of staff through API. 
 - ✅ Each staff is allowed to raise multiple requests
-- 
+
 ---
 
 ## ✨ Features
