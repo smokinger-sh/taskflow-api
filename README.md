@@ -3,7 +3,6 @@
 
 ## 📌 Table of Contents
 - [Overview](#-overview)
-- [Features](#-features)
 - [Getting Started](#-getting-started)
 - [API Documentation](#-api-documentation)
 - [Configuration](#-configuration)
@@ -22,11 +21,6 @@ Company does not have a tool for staff to log tasks.
 - ✅ Each staff is allowed to raise multiple requests
 
 ---
-
-## ✨ Features
-This assignment contains:
-
-
 
 ## 🚀 Getting Started
 
