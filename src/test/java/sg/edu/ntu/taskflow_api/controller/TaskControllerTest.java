@@ -73,10 +73,10 @@ public class TaskControllerTest {
         mockMvc.perform(get("/tasks")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].task_name").value("Task 1"))
+                .andExpect(jsonPath("$[0].taskName").value("Task 1"))
                 .andExpect(jsonPath("$[0].description").value("Description 1"))
                 .andExpect(jsonPath("$[0].status").value("PENDING"))
-                .andExpect(jsonPath("$[1].task_name").value("Task 2"))
+                .andExpect(jsonPath("$[1].taskName").value("Task 2"))
                 .andExpect(jsonPath("$[1].description").value("Description 2"))
                 .andExpect(jsonPath("$[1].status").value("IN_PROGRESS"));
     }

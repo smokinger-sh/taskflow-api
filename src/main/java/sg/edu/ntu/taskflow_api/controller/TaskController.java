@@ -18,60 +18,56 @@ import sg.edu.ntu.taskflow_api.model.Task;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-
-
-@RestController 
+@RestController
 @RequestMapping("/tasks")
 public class TaskController {
-    
+
     private final TaskService taskService;
 
     public TaskController(TaskService taskService) {
         this.taskService = taskService;
     }
 
-
-// createTask(Task task)
+    // createTask(Task task)
     @PostMapping("")
     public ResponseEntity<Task> createTask(@RequestBody @Valid Task task) {
         Task newTask = taskService.createTask(task);
         return new ResponseEntity<>(newTask, HttpStatus.CREATED);
     }
 
+    // updateTask(Long id, Task task)
+    @PutMapping("/{id}")
+    public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody @Valid Task task) {
+        Task updatedTask = taskService.updateTask(id, task);
+        return new ResponseEntity<>(updatedTask, HttpStatus.OK);
+    }
 
-// updateTask(Long id, Task task)
-@PutMapping("/{id}")
-public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody @Valid Task task) {
-    Task updatedTask = taskService.updateTask(id, task);
-    return new ResponseEntity<>(updatedTask, HttpStatus.OK);
-}
-// deleteTask(Long id)
-@DeleteMapping("/{id}")
-public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
-    taskService.deleteTask(id);
-    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-}
+    // deleteTask(Long id)
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
+        taskService.deleteTask(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
-// markTaskAsComplete(Long id)
-@PutMapping("/{id}/complete")
-public ResponseEntity<Task> markTaskAsComplete(@PathVariable Long id) {
-    Task updatedTask = taskService.markTaskAsCompleted(id);
-    return new ResponseEntity<>(updatedTask, HttpStatus.OK);
-}
+    // markTaskAsComplete(Long id)
+    @PutMapping("/{id}/complete")
+    public ResponseEntity<Task> markTaskAsComplete(@PathVariable Long id) {
+        Task updatedTask = taskService.markTaskAsCompleted(id);
+        return new ResponseEntity<>(updatedTask, HttpStatus.OK);
+    }
 
-// findAllTasks()
-@GetMapping("")
-public ResponseEntity<List<Task>> findAllTasks() {
-    List<Task> tasks = taskService.getAllTasks();
-    return new ResponseEntity<>(tasks, HttpStatus.OK);
-}
+    // findAllTasks()
+    @GetMapping("")
+    public ResponseEntity<List<Task>> findAllTasks() {
+        List<Task> tasks = taskService.getAllTasks();
+        return new ResponseEntity<>(tasks, HttpStatus.OK);
+    }
 
-// findTaskById(Long id)
-@GetMapping("/{id}")
-public ResponseEntity<Task> findTaskById(@PathVariable Long id) {
-    Task task = taskService.getTaskById(id);
-    return new ResponseEntity<>(task, HttpStatus.OK);
-}
-
+    // findTaskById(Long id)
+    @GetMapping("/{id}")
+    public ResponseEntity<Task> findTaskById(@PathVariable Long id) {
+        Task task = taskService.getTaskById(id);
+        return new ResponseEntity<>(task, HttpStatus.OK);
+    }
 
 }
