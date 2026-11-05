@@ -171,9 +171,9 @@ mvn test -Dtest=TaskControllerTest.java
 ![Circle CI](screenshots/circleci.jpg)
 
 
-### Git Action
+### Git Actions
 
-![Git Action](<screenshots/circleci.jpg>)
+![Git Action](<screenshots/gitactions.jpg>)
 
 
 ### Docker Desktop - Local
