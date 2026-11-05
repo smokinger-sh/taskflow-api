@@ -7,7 +7,7 @@
 - [API Documentation](#-api-documentation)
 - [Configuration](#-configuration)
 - [Screenshots](#-screenshots)
-- [Contributing](#-contributing)
+- [Graditude](#-graditude)
 - [License](#-license)
 
 ---
@@ -168,9 +168,9 @@ Add screenshots of your application, API responses, or UI here.
 ```bash
 mvn test -Dtest=TaskControllerTest.java
 ```
-```markdown
-![Circle CI](<screenshots/circleci.jpg>)
-```
+
+![Circle CI](screenshots/circleci.jpg)
+
 
 ### Git Action
 ```markdown
@@ -184,7 +184,7 @@ docker build -t smokinger/taskflow-api:v1.0.0
 ```
 
 ```markdown
-![Docker Compose](<screenshots/dockercompose.jpg>)
+![Docker Compose](screenshots/dockercompose.jpg)
 ```
 ### Docker Hub - Server
 ```bash
@@ -193,15 +193,15 @@ docker build --platform linux/amd64 -t smokinger/taskflowapi:v1.0.0 .
 docker push smokinger/taskflowapi:v1.0.0
 ```
 ```markdown
-![Docker Hub Images](<screenshots/dockerhub.jpg>)
+![Docker Hub Images](screenshots/dockerhub.jpg)
 ```
 ### Render
 ```markdown
-![Render](<screenshots/Render.jpg>)
+![Render](screenshots/Render.jpg)
 ```
 
 ---
-## 🤝 Thank YOU!
+## 🤝 Graditude
 
 Thank you for the patience and coaching 
 
