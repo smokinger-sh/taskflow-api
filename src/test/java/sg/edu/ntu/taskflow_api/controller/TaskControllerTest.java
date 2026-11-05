@@ -1,10 +1,9 @@
 package sg.edu.ntu.taskflow_api.controller;
 
+import sg.edu.ntu.taskflow_api.model.Department;
 import sg.edu.ntu.taskflow_api.model.Staff;
 import sg.edu.ntu.taskflow_api.model.Task;
 import sg.edu.ntu.taskflow_api.model.TaskStatus;
-import sg.edu.ntu.taskflow_api.repository.TaskRepository;
-import sg.edu.ntu.taskflow_api.repository.StaffRepository;
 import sg.edu.ntu.taskflow_api.service.TaskService;
 
 import org.junit.jupiter.api.Test;
@@ -32,13 +31,7 @@ public class TaskControllerTest {
     private MockMvc mockMvc;
 
     @MockitoBean
-    private TaskRepository taskRepository;
-
-    @MockitoBean
     private TaskService taskService;
-
-    @MockitoBean
-    private StaffRepository staffRepository;
 
     /**
      * Test: GET /tasks should return list of tasks
@@ -47,9 +40,17 @@ public class TaskControllerTest {
     public void testGetAllTasks() throws Exception {
 
         // Arrange - Create test data
-        Staff mockStaff = new Staff();
-        mockStaff.setId(1L);
-        mockStaff.setName("John Doe");
+        Staff mockStaff1 = new Staff();
+        mockStaff1.setId(1L);
+        mockStaff1.setName("John Doe");
+        mockStaff1.setEmail("john.doe@example.com");
+        mockStaff1.setDepartment(Department.ENGINEERING);
+
+        Staff mockStaff2 = new Staff();
+        mockStaff2.setId(2L);
+        mockStaff2.setName("Jane Smith");
+        mockStaff2.setEmail("jane.smith@example.com");
+        mockStaff2.setDepartment(Department.HR);
 
         // Arrange - Create test data
         Task task1 = new Task();
@@ -57,17 +58,21 @@ public class TaskControllerTest {
         task1.setTaskName("Task 1");
         task1.setDescription("Description 1");
         task1.setStatus(TaskStatus.PENDING);
+        task1.setStaff(mockStaff1);
 
         Task task2 = new Task();
         task2.setId(2L);
         task2.setTaskName("Task 2");
         task2.setDescription("Description 2");
         task2.setStatus(TaskStatus.IN_PROGRESS);
+        task2.setStaff(mockStaff2);
 
         List<Task> tasks = Arrays.asList(task1, task2);
+        List<Staff> staffList = Arrays.asList(mockStaff1, mockStaff2);
 
-        // Mock the repository to return test data
-        when(taskRepository.findAll()).thenReturn(tasks);
+        // Mock the service to return test data
+        when(taskService.getAllTasks()).thenReturn(tasks);
+        when(taskService.getAllStaff()).thenReturn(staffList);
 
         // Act & Assert - Make request and verify response
         mockMvc.perform(get("/tasks")

@@ -53,5 +53,6 @@ public class Task {
     @ManyToOne(optional = false)
     @JoinColumn(name = "staff_id", referencedColumnName = "id")
     @NotNull(message = "Staff is required")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Staff staff;
 }
