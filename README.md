@@ -160,8 +160,8 @@ Add screenshots of your application, API responses, or UI here.
 
 ### DBeaver
 ```markdown
-![Dbeaver - Staff](screenshots/dbeaver - staff.jpg)
-![Dbeaver - Tasks](screenshots/dbeaver - tasks.jpg)
+![Dbeaver - Staff](<screenshots/dbeaver%20-%20staff.jpg>)
+![Dbeaver - Tasks](<screenshots/dbeaver%20-%20tasks.jpg>)
 
 ```
 ### CircleCI
@@ -169,12 +169,12 @@ Add screenshots of your application, API responses, or UI here.
 mvn test -Dtest=TaskControllerTest.java
 ```
 ```markdown
-![Circle CI](screenshots/circleci.jpg)
+![Circle CI](<screenshots/circleci.jpg>)
 ```
 
 ### Git Action
 ```markdown
-![Git Action](screenshots/circleci.jpg)
+![Git Action](<screenshots/circleci.jpg>)
 ```
 
 ### Docker Desktop - Local
@@ -184,7 +184,7 @@ docker build -t smokinger/taskflow-api:v1.0.0
 ```
 
 ```markdown
-![Docker Compose](screenshots/dockercompose.jpg)
+![Docker Compose](<screenshots/dockercompose.jpg>)
 ```
 ### Docker Hub - Server
 ```bash
@@ -193,11 +193,11 @@ docker build --platform linux/amd64 -t smokinger/taskflowapi:v1.0.0 .
 docker push smokinger/taskflowapi:v1.0.0
 ```
 ```markdown
-![Docker Hub Images](screenshots/dockerhub.jpg)
+![Docker Hub Images](<screenshots/dockerhub.jpg>)
 ```
 ### Render
 ```markdown
-![Render](screenshots/Render.jpg)
+![Render](<screenshots/Render.jpg>)
 ```
 
 ---
