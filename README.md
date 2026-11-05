@@ -8,7 +8,6 @@
 - [API Documentation](#api-documentation)
 - [Configuration](#configuration)
 - [Screenshots](#screenshots)
-- [Future Improvements](#future-improvements)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -204,7 +203,29 @@ docker push smokinger/taskflowapi:v1.0.0
 ```
 ### Render
 ```markdown
-![Circle CI](screenshots/circleci.jpg)
+![Render](screenshots/Render.jpg)
 ```
 
 ---
+## 🤝 Thank YOU!
+
+Thank you for the patience and coaching 
+
+👩‍💻 Daniel
+👩‍💻 Jesstern
+👩‍💻 Sanjela
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👩‍💻 Author
+
+**Siew Hoon**
+
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/siewhoon)
+- GitHub: [Your GitHub](https://github.com/smokinger-sh)
