@@ -204,9 +204,9 @@ docker push smokinger/taskflowapi:v1.0.0
 
 Thank you for the patience and coaching 
 
-👩‍💻 Daniel
-👩‍💻 Jesstern
-👩‍💻 Sanjela
+- 👩‍💻 Daniel
+- 👩‍💻 Jesstern
+- 👩‍💻 Sanjela
 
 ---
 
