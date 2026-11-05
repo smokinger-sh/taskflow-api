@@ -8,6 +8,8 @@ class TaskflowApiApplicationTests {
 
 	@Test
 	void contextLoads() {
+		// test all the application context loads successfully
+		
 	}
 
 }

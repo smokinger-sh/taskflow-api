@@ -70,7 +70,12 @@
 			<artifactId>spring-ai-starter-model-openai</artifactId>
 		</dependency>
 
-
+		<!-- add H2 database dependencies here -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
