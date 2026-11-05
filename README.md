@@ -159,11 +159,10 @@ http://localhost:8080
 Add screenshots of your application, API responses, or UI here.
 
 ### DBeaver
-```markdown
+
 ![Dbeaver - Staff](<screenshots/dbeaver%20-%20staff.jpg>)
 ![Dbeaver - Tasks](<screenshots/dbeaver%20-%20tasks.jpg>)
 
-```
 ### CircleCI
 ```bash
 mvn test -Dtest=TaskControllerTest.java
@@ -173,9 +172,9 @@ mvn test -Dtest=TaskControllerTest.java
 
 
 ### Git Action
-```markdown
+
 ![Git Action](<screenshots/circleci.jpg>)
-```
+
 
 ### Docker Desktop - Local
 ```bash
@@ -183,22 +182,22 @@ docker compose up -d --build
 docker build -t smokinger/taskflow-api:v1.0.0
 ```
 
-```markdown
+
 ![Docker Compose](screenshots/dockercompose.jpg)
-```
+
 ### Docker Hub - Server
 ```bash
 docker login
 docker build --platform linux/amd64 -t smokinger/taskflowapi:v1.0.0 .
 docker push smokinger/taskflowapi:v1.0.0
 ```
-```markdown
+
 ![Docker Hub Images](screenshots/dockerhub.jpg)
-```
+
 ### Render
-```markdown
+
 ![Render](screenshots/Render.jpg)
-```
+
 
 ---
 ## 🤝 Graditude
