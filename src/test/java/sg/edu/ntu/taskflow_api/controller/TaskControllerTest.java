@@ -1,5 +1,6 @@
 package sg.edu.ntu.taskflow_api.controller;
 
+import sg.edu.ntu.taskflow_api.model.Staff;
 import sg.edu.ntu.taskflow_api.model.Task;
 import sg.edu.ntu.taskflow_api.model.TaskStatus;
 import sg.edu.ntu.taskflow_api.repository.TaskRepository;
@@ -37,6 +38,12 @@ public class TaskControllerTest {
      */
     @Test
     public void testGetAllTasks() throws Exception {
+
+        // Arrange - Create test data
+        Staff mockStaff = new Staff();
+        mockStaff.setId(1L);
+        mockStaff.setName("John Doe");
+
         // Arrange - Create test data
         Task task1 = new Task();
         task1.setId(1L);
@@ -64,7 +71,6 @@ public class TaskControllerTest {
                 .andExpect(jsonPath("$[0].status").value("PENDING"))
                 .andExpect(jsonPath("$[1].task_name").value("Task 2"))
                 .andExpect(jsonPath("$[1].description").value("Description 2"))
-                .andExpect(jsonPath("$[1].status").value("IN_PROGRESS"))
-                ;
+                .andExpect(jsonPath("$[1].status").value("IN_PROGRESS"));
     }
 }
