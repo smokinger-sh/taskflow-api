@@ -1,6 +1,112 @@
 # 🚀 TaskFlow API
 
+
+## 📌 Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [API Documentation](#api-documentation)
+- [Configuration](#configuration)
+- [Screenshots](#screenshots)
+- [Future Improvements](#future-improvements)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## 📖 Overview
+### The Challenge: 
+Company does not have a tool for staff to log tasks.
+
+### The Solution:
+- ✅ Allow creating of staff through API. 
+- ✅ Each staff is allowed to raise multiple requests
+- 
+---
+
+## ✨ Features
 This assignment contains:
+
+
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have installed:
+
+- Java 17 or later
+- Maven
+- PostgreSQL
+- Git
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/your-project.git
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd your-project
+```
+
+### 3. Configure the database
+
+Create a PostgreSQL database:
+
+```sql
+CREATE DATABASE my_database;
+```
+
+### 4. Configure application properties
+
+Update `src/main/resources/application.properties`:
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/my_database
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
+
+Set your database credentials using environment variables.
+
+### 5. Run the application
+
+```bash
+./mvnw spring-boot:run
+```
+
+Or, if Maven is installed:
+
+```bash
+mvn spring-boot:run
+```
+
+The application will start at:
+
+http://localhost:8080
+
+---
+
+## 📡 API Documentation
+
+
+
+### Base URL 
+| No | Location | Path | 
+|-----------|-----------|-----------|
+| 1     |      Local     |    http://localhost:8080/api/staff |
+| 2     |     Local      |     http://localhost:8080/api/tasks  |
+| 3     |      Server     |    https://taskflowapi-v2-0-0.onrender.com/staff |
+| 4     |     Server      |     https://taskflowapi-v2-0-0.onrender.com/tasks  |
+
+
+
 | No | Method | Path | What it does |
 |-----------|-----------|-----------|-----------|
 | 1     |      POST     |    /staff       |      Add Staff     |
@@ -12,3 +118,93 @@ This assignment contains:
 | 7     |     DELETE      |      /tasks/{{id}}     |       Delete task by task id    |
 | 8     |      PUT     |    /tasks{{id}}/complete       |     Update task status as completed      |
 | 9     |      GET     |      /support?message=how do i install microsoft word     |     AI Support Tool for Internal Staff      |
+
+### Example Request
+
+**POST** `/api/staff`
+
+```json
+  {
+
+  "name": "Mary",
+  "email": "mary@avengers.com",
+  "department": "MARKETING",
+  "position": "Executive"
+  
+  }
+```
+
+**POST** `/api/tasks`
+
+```json
+  {
+
+  "taskName": "Prepare report",
+  "description": "Prepare the monthly report",
+  "status": "PENDING",
+  "staff": {"id": 1}
+  
+  }
+```
+
+---
+
+## ⚙️ Configuration
+
+| Variable | Description |
+|---|---|
+| `DB_USERNAME` | PostgreSQL username |
+| `DB_PASSWORD` | PostgreSQL password |
+| `DB_URL` | PostgreSQL connection URL |
+
+**Security note:** Never commit database passwords, API keys, or other secrets to GitHub.
+
+---
+
+## 📸 Screenshots
+
+Add screenshots of your application, API responses, or UI here.
+
+### DBeaver
+```markdown
+![Dbeaver - Staff](screenshots/dbeaver - staff.jpg)
+![Dbeaver - Tasks](screenshots/dbeaver - tasks.jpg)
+
+```
+### CircleCI
+```bash
+mvn test -Dtest=TaskControllerTest.java
+```
+```markdown
+![Circle CI](screenshots/circleci.jpg)
+```
+
+### Git Action
+```markdown
+![Git Action](screenshots/circleci.jpg)
+```
+
+### Docker Desktop - Local
+```bash
+docker compose up -d --build
+docker build -t smokinger/taskflow-api:v1.0.0
+```
+
+```markdown
+![Docker Compose](screenshots/dockercompose.jpg)
+```
+### Docker Hub - Server
+```bash
+docker login
+docker build --platform linux/amd64 -t smokinger/taskflowapi:v1.0.0 .
+docker push smokinger/taskflowapi:v1.0.0
+```
+```markdown
+![Docker Hub Images](screenshots/dockerhub.jpg)
+```
+### Render
+```markdown
+![Circle CI](screenshots/circleci.jpg)
+```
+
+---
