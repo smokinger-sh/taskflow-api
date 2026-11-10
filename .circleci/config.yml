@@ -1,6 +1,10 @@
 version: 2.1
 
 jobs:
+
+  # ==========================================
+  # BUILD JOB - Compile and package
+  # ==========================================
   build:
     docker:
       - image: cimg/openjdk:21.0
@@ -24,6 +28,9 @@ jobs:
           paths:
             - target/*.jar
 
+  # ==========================================
+  # TEST JOB - Run automated tests
+  # ==========================================
   test:
     docker:
       - image: cimg/openjdk:21.0
@@ -70,6 +77,10 @@ jobs:
       - store_artifacts:
           path: target/surefire-reports
 
+ # ==========================================
+  # PUBLISH JOB - Build and push Docker image
+  # ==========================================
+
   publish:
     docker:
       - image: cimg/base:stable
@@ -91,6 +102,53 @@ jobs:
             echo "Pushing image to Docker Hub..."
             docker push $DOCKER_USERNAME/taskflowapi:v1.0.0
 
+  # ==========================================
+  # DEPLOY JOB - Redeploy on Render with the Render CLI
+  # ==========================================
+  deploy:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: Install the Render CLI
+          command: |
+            curl -fsSL https://raw.githubusercontent.com/render-oss/cli/refs/heads/main/bin/install.sh | sh
+            echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$BASH_ENV"
+      - run:
+          name: Redeploy latest image on Render and wait
+          command: |
+            echo "Asking Render to redeploy the latest image..."
+            render deploys create "$RENDER_SERVICE_ID" --wait --confirm --output text
+            echo "The new version is live on Render."
+
+  # ==========================================
+  # NOTIFY JOB - Post the deployment result to Discord
+  # ==========================================
+  notify:
+    parameters:
+      result:
+        type: enum
+        enum: ["success", "failed"]
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: Send the deployment result to Discord
+          command: |
+            if [ "<< parameters.result >>" = "success" ]; then
+              MESSAGE="✅ TaskFlow API deployed to production - commit ${CIRCLE_SHA1:0:7} by ${CIRCLE_USERNAME}"
+            else
+              MESSAGE="❌ TaskFlow API deployment FAILED - commit ${CIRCLE_SHA1:0:7} by ${CIRCLE_USERNAME}. Production is still running the previous version."
+            fi
+            curl --fail --silent --show-error \
+              -H "Content-Type: application/json" \
+              -d "{\"content\": \"${MESSAGE}\"}" \
+              "$DISCORD_WEBHOOK_URL"
+            echo "Posted to Discord: ${MESSAGE}"
+
+# ==========================================
+# WORKFLOW - Run jobs in sequence
+# ==========================================            
 workflows:
   build_test_publish:
     jobs:
@@ -102,3 +160,17 @@ workflows:
           context: docker-hub
           requires:
             - test
+      - deploy:
+          context: docker-hub
+          requires:
+            - publish
+      - notify:
+          name: notify-success
+          result: success
+          requires:
+            - deploy: success
+      - notify:
+          name: notify-failure
+          result: failed
+          requires:
+            - deploy: failed
