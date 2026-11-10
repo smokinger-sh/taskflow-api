@@ -6,6 +6,7 @@
 - [Getting Started](#-getting-started)
 - [API Documentation](#-api-documentation)
 - [Configuration](#-configuration)
+- [Frontend Webapp](#-frontend-webapp)
 - [Screenshots](#-screenshots)
 - [Gratitude](#-gratitude)
 - [License](#-license)
@@ -148,7 +149,52 @@ http://localhost:8080
 **Security note:** Never commit database passwords, API keys, or other secrets to GitHub.
 
 ---
+## 🌐 Frontend Webapp
+Frontend inteface is built using React and hosted in Netlify
 
+| URL |
+|---|
+| [Github - Taskflow Frontend](https://github.com/smokinger-sh/taskflow-frontend "Github - Taskflow Frontend") |
+| [Taskflow WebApp](https://taskflowapi-sh.netlify.app/ "TaskFlow WebApp") |
+
+### Key Features
+| No | Pages | Features | 
+|-----------|-----------|-----------|
+| 1     |      Dashboard & Tasks     | Summary of the status of each status and search tasks |
+| 2     |     Add Task      |     Add Request  |
+| 3     |      Staff     |    Search and view staff |
+| 4     |     Register Staff      |     Register Staff  |
+| 5     |     AI Support      |     Chatbot to encourage staff self-help before raising request  |
+
+![1. Dashboard & Tasks](<screenshots/frontend_dashboard.jpg>)
+![2.1 Add Task](<screenshots/frontend_addtask.jpg>)
+![2.2 Add Task with error](<screenshots/frontend_addtask_error.jpg>)
+
+![3. Staff](<screenshots/frontend_stafflist.jpg>)
+![4.1 Register Staff](<screenshots/frontend_stafflist.jpg>)
+![4.2 Register Staff](<screenshots/frontend_stafflist_error.jpg>)
+![5. AI Support](<screenshots/frontend_aisupport.jpg>)
+
+
+### Issues and Resolutions
+
+I came across issues when hosting in Netlify. It was deployed successfully, however, on the webapp it shows an error message: **Cannot reach the server. It may be waking up (free hosting) or blocked by CORS. Please try again in a moment.**
+
+#### I have utilised Copilot to help me understand the issue:
+> [!Tip]
+> “The frontend is hosted on Netlify, and the backend API is hosted on Render. Because they use different domains, the browser requires the backend to explicitly allow requests from the frontend. This is called CORS.
+
+> We tested the API and it returned HTTP 200, meaning it was reachable. However, its responses were missing the CORS permission headers, so the browser blocked the frontend from reading them.
+
+> The fix is to configure CORS in the Spring Boot backend to allow our Netlify website, then redeploy the backend.”
+
+#### Copilot suggested fix which I have implemented in Springboot:
+Under ```/taskflow_api/config``` folder, add ```CorsConfig.java``` and ```SecurityConfig.jaa```.
+In pom.xml, import ```Springboot Starter Security```.
+
+
+
+---
 ## 📸 Screenshots
 
 Add screenshots of your application, API responses, or UI here.
