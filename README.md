@@ -168,8 +168,14 @@ Add screenshots of your application, API responses, or UI here.
 mvn test -Dtest=TaskControllerTest.java
 ```
 
-![Circle CI](screenshots/circleci.jpg)
+- ✅ Build
+- ✅ Test
+- ✅ Publish
+- ✅ Deploy
+- ✅ Notification to Discord
 
+![Circle CI](screenshots/circleci.jpg)
+![Webhook to Discord](screenshots/discordnotification.jpg)
 
 ### Git Actions
 
