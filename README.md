@@ -225,6 +225,29 @@ When I add Synk Scan codes into .circleci/config.yml and run with CircleCI, I co
 
 ![Snyk_circleci](screenshots/circleci_snyk.jpg)
 
+Claude suggested that the endpoint returns the LLM output as a raw String, which is derived from user input, so Snyk treats it as reflected HTML. Claude suggest to tweak the code to return JSON instead. I did not implement this due to time constraint, and will definitely implement this learning in Captstone Project. 
+
+```java
+import java.util.Map;
+import org.springframework.http.MediaType;
+
+@GetMapping(value = "/support", produces = MediaType.APPLICATION_JSON_VALUE)
+public Map<String, String> support(@RequestParam String message) {
+    String reply = chatClient.prompt()
+            .system("You are a friendly and professional task support assistant for a Fashion company. " +
+                    "You help users with questions on their various technical, administrative tasks " +
+                    "Keep your answers concise and practical. " +
+                    "Always provide step-by-step instructions when explaining tasks. " +
+                    "If a question is not related to tasks, politely redirect the user.")
+            .user(message)
+            .call()
+            .content();
+    return Map.of("reply", reply);
+}
+
+```
+
+
 ---
 ## 🤝 Gratitude
 
