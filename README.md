@@ -14,7 +14,7 @@
 
 ## 📖 Overview
 ### The Challenge: 
-Company does not have a tool for staff to log tasks.
+The company lacks a centralized task management system for staff to log and manage their requests. There is also no tracking mechanism to monitor request statuses, making it difficult for staff to track progress, follow up on outstanding tasks, and ensure requests are completed in a timely manner.
 
 ### The Solution:
 - ✅ Allow creating of staff through API. 
