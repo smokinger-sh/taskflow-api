@@ -171,7 +171,7 @@ Frontend inteface is built using React and hosted in Netlify
 ![2.2 Add Task with error](<screenshots/frontend_addtask_error.jpg>)
 
 ![3. Staff](<screenshots/frontend_stafflist.jpg>)
-![4 Register Staff](<screenshots/frontend_addstaff.jpg>)
+![4 Register Staff](<screenshots/frontend_addstaff_error.jpg>)
 ![5. AI Support](<screenshots/frontend_aisupport.jpg>)
 
 
@@ -181,11 +181,7 @@ I came across issues when hosting in Netlify. It was deployed successfully, howe
 
 #### I have utilised Copilot to help me understand the issue:
 > [!Tip]
-> “The frontend is hosted on Netlify, and the backend API is hosted on Render. Because they use different domains, the browser requires the backend to explicitly allow requests from the frontend. This is called CORS.
-
-> We tested the API and it returned HTTP 200, meaning it was reachable. However, its responses were missing the CORS permission headers, so the browser blocked the frontend from reading them.
-
-> The fix is to configure CORS in the Spring Boot backend to allow our Netlify website, then redeploy the backend.”
+> “The frontend is hosted on Netlify, and the backend API is hosted on Render. Because they use different domains, the browser requires the backend to explicitly allow requests from the frontend. This is called CORS. We tested the API and it returned HTTP 200, meaning it was reachable. However, its responses were missing the CORS permission headers, so the browser blocked the frontend from reading them. The fix is to configure CORS in the Spring Boot backend to allow our Netlify website, then redeploy the backend.”
 
 #### Copilot suggested fix which I have implemented in Springboot:
 Under ```/taskflow_api/config``` folder, add ```CorsConfig.java``` and ```SecurityConfig.jaa```.
