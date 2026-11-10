@@ -184,7 +184,7 @@ I came across issues when hosting in Netlify. It was deployed successfully, howe
 > “The frontend is hosted on Netlify, and the backend API is hosted on Render. Because they use different domains, the browser requires the backend to explicitly allow requests from the frontend. This is called CORS. We tested the API and it returned HTTP 200, meaning it was reachable. However, its responses were missing the CORS permission headers, so the browser blocked the frontend from reading them. The fix is to configure CORS in the Spring Boot backend to allow our Netlify website, then redeploy the backend.”
 
 #### Copilot suggested fix which I have implemented in Springboot:
-Under ```/taskflow_api/config``` folder, add ```CorsConfig.java``` and ```SecurityConfig.jaa```.
+Under ```/taskflow_api/config``` folder, add ```CorsConfig.java``` and ```SecurityConfig.java```.
 In pom.xml, import ```Springboot Starter Security```.
 
 
@@ -266,7 +266,8 @@ When I add Synk Scan codes into .circleci/config.yml and run with CircleCI, I co
 
 ![Snyk_circleci](screenshots/circleci_snyk.jpg)
 
-Claude suggested that the endpoint returns the LLM output as a raw String, which is derived from user input, so Snyk treats it as reflected HTML. Claude suggest to tweak the code to return JSON instead. I did not implement this due to time constraint, and will take this into consideration in the upcoming Captstone Project. 
+> [!Caution]
+> Claude suggested that the endpoint returns the LLM output as a raw String, which is derived from user input, so Snyk treats it as reflected HTML. Claude suggest to tweak the code to return JSON instead. I did not implement this due to time constraint, and will take this into consideration in the upcoming Captstone Project. 
 
 ```java
 import java.util.Map;
