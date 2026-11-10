@@ -162,6 +162,9 @@ Add screenshots of your application, API responses, or UI here.
 ![Dbeaver - Tasks](<screenshots/dbeaver%20-%20tasks.jpg>)
 
 ### CircleCI
+
+#### Pre-requisite
+Run the following script locally in VSCode to ensure TaskControllerTest.java is sucessful before deploying into CircleCI
 ```bash
 mvn test -Dtest=TaskControllerTest.java
 ```
