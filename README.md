@@ -164,7 +164,7 @@ Add screenshots of your application, API responses, or UI here.
 ### CircleCI
 
 #### Pre-requisite
-Run the following script locally in VSCode to ensure TaskControllerTest.java is sucessful before deploying into CircleCI
+Run the following script locally in VSCode terminal to ensure TaskControllerTest.java is sucessful before deploying into CircleCI
 ```bash
 mvn test -Dtest=TaskControllerTest.java
 ```
