@@ -216,6 +216,10 @@ docker push smokinger/taskflowapi:v1.0.0
 
 ![Render](screenshots/Render.jpg)
 
+### Security
+
+I have scanned smokinger-sh/taskflow-api with Synk application, here are the top 4 Issues on POM.xml
+![Synk](screenshots/synk.jpg)
 
 ---
 ## 🤝 Gratitude
