@@ -168,7 +168,7 @@ Run the following script locally in VSCode to ensure TaskControllerTest.java is 
 ```bash
 mvn test -Dtest=TaskControllerTest.java
 ```
-
+The screenshots below show success in deployment in CircleCI and webhook to Discord
 - ✅ Build
 - ✅ Test
 - ✅ Publish
@@ -183,10 +183,14 @@ mvn test -Dtest=TaskControllerTest.java
 
 ### Git Actions
 
+The screenshot below shows success Build-Test-Publish Workflow
+
 ![Git Action](<screenshots/gitactions.jpg>)
 
 
 ### Docker Desktop - Local
+
+Run the following code in VSCode terminal to build image and create container on local
 ```bash
 docker compose up -d --build
 docker build -t smokinger/taskflow-api:v1.0.0
@@ -196,6 +200,8 @@ docker build -t smokinger/taskflow-api:v1.0.0
 ![Docker Compose](screenshots/dockercompose.jpg)
 
 ### Docker Hub - Server
+
+Run the following code in VSCode terminal to build and push image in server
 ```bash
 docker login
 docker build --platform linux/amd64 -t smokinger/taskflowapi:v1.0.0 .
