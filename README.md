@@ -218,8 +218,12 @@ docker push smokinger/taskflowapi:v1.0.0
 
 ### Security
 
-I have scanned smokinger-sh/taskflow-api with Synk application, here are the top 4 Issues on POM.xml
-![Synk](screenshots/synk.jpg)
+I have scanned smokinger-sh/taskflow-api with Snyk application, here are the top 4 Issues on POM.xml
+![Snyk](screenshots/synk.jpg)
+
+When I add Synk Scan codes into .circleci/config.yml and run with CircleCI, I come across a High severity security issue with AiController.java
+
+![Snyk_circleci](screenshots/circleci_snyk.jpg)
 
 ---
 ## 🤝 Gratitude
