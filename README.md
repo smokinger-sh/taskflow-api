@@ -114,7 +114,7 @@ http://localhost:8080
 
 ### Example Request
 
-**POST** `/api/staff`
+**POST** `/staff`
 
 ```json
   {
@@ -127,7 +127,7 @@ http://localhost:8080
   }
 ```
 
-**POST** `/api/tasks`
+**POST** `/tasks`
 
 ```json
   {
@@ -160,7 +160,11 @@ Add screenshots of your application, API responses, or UI here.
 
 ### DBeaver
 
+#### Local Staff Database 
+
 ![Dbeaver - Staff](<screenshots/dbeaver%20-%20staff.jpg>)
+
+#### Local Tasks Database 
 ![Dbeaver - Tasks](<screenshots/dbeaver%20-%20tasks.jpg>)
 
 ### CircleCI
