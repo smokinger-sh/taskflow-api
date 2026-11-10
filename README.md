@@ -225,7 +225,7 @@ When I add Synk Scan codes into .circleci/config.yml and run with CircleCI, I co
 
 ![Snyk_circleci](screenshots/circleci_snyk.jpg)
 
-Claude suggested that the endpoint returns the LLM output as a raw String, which is derived from user input, so Snyk treats it as reflected HTML. Claude suggest to tweak the code to return JSON instead. I did not implement this due to time constraint, and will definitely implement this learning in Captstone Project. 
+Claude suggested that the endpoint returns the LLM output as a raw String, which is derived from user input, so Snyk treats it as reflected HTML. Claude suggest to tweak the code to return JSON instead. I did not implement this due to time constraint, and will take this into consideration in the upcoming Captstone Project. 
 
 ```java
 import java.util.Map;
