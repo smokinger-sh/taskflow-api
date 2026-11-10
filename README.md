@@ -9,7 +9,7 @@
 - [Screenshots](#-screenshots)
 - [Gratitude](#-gratitude)
 - [License](#-license)
-- [Author] (#-author)
+- [Author](#-author)
 
 ---
 
