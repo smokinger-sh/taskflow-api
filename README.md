@@ -174,7 +174,10 @@ mvn test -Dtest=TaskControllerTest.java
 - ✅ Deploy
 - ✅ Notification to Discord
 
+#### Circle CI Screenshot
 ![Circle CI](screenshots/circleci.jpg)
+
+#### Discord Notification
 ![Webhook to Discord](screenshots/discordnotification.jpg)
 
 ### Git Actions
@@ -188,7 +191,7 @@ docker compose up -d --build
 docker build -t smokinger/taskflow-api:v1.0.0
 ```
 
-
+#### Docker Desktop - App and DB in Container
 ![Docker Compose](screenshots/dockercompose.jpg)
 
 ### Docker Hub - Server
@@ -197,16 +200,17 @@ docker login
 docker build --platform linux/amd64 -t smokinger/taskflowapi:v1.0.0 .
 docker push smokinger/taskflowapi:v1.0.0
 ```
-
+#### Docker Compose - with versionings
 ![Docker Hub Images](screenshots/dockerhub.jpg)
 
 ### Render
+#### Render - App and DB in Production
 
 ![Render](screenshots/Render.jpg)
 
 
 ---
-## 🤝 Graditude
+## 🤝 Gratitude
 
 Thank you for the patience and coaching 
 
