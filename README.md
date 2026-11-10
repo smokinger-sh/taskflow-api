@@ -7,7 +7,7 @@
 - [API Documentation](#-api-documentation)
 - [Configuration](#-configuration)
 - [Screenshots](#-screenshots)
-- [Graditude](#-graditude)
+- [Gratitude](#-gratitude)
 - [License](#-license)
 
 ---
