@@ -171,8 +171,7 @@ Frontend inteface is built using React and hosted in Netlify
 ![2.2 Add Task with error](<screenshots/frontend_addtask_error.jpg>)
 
 ![3. Staff](<screenshots/frontend_stafflist.jpg>)
-![4.1 Register Staff](<screenshots/frontend_stafflist.jpg>)
-![4.2 Register Staff](<screenshots/frontend_stafflist_error.jpg>)
+![4 Register Staff](<screenshots/frontend_addstaff.jpg>)
 ![5. AI Support](<screenshots/frontend_aisupport.jpg>)
 
 
