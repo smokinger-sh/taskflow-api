@@ -71,13 +71,7 @@ Set your database credentials using environment variables.
 ### 5. Run the application
 
 ```bash
-./mvnw spring-boot:run
-```
-
-Or, if Maven is installed:
-
-```bash
-mvn spring-boot:run
+mvn clean spring-boot:run
 ```
 
 The application will start at:
