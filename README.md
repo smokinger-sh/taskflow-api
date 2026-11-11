@@ -291,7 +291,7 @@ public Map<String, String> support(@RequestParam String message) {
 ```
 
 Publish success with Snyk Scan and Snyk Code:
-![Snyk Publish](screenshots/circleci_synk2.jpg)
+![Snyk Publish](screenshots/circleci_snyk2.jpg)
 
 #### Dependabot
 I have activated Dependabot for this repo:
