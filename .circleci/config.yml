@@ -82,33 +82,39 @@ jobs:
   # ==========================================
   # SNYK_SCAN JOB - Snyk: scan Maven dependencies
   # ==========================================
-  # snyk_scan:
-  #   docker:
-  #     - image: cimg/openjdk:21.0
-  #   steps:
-  #     - checkout
-  #     - restore_cache:
-  #         keys:
-  #           - maven-deps-{{ checksum "pom.xml" }}
-  #           - maven-deps-
-  #     - snyk/scan:
-  #         severity-threshold: high
-  #         cli-version: 1.1308.1
-  #         monitor-on-build: false
+  snyk_scan:
+    docker:
+      - image: cimg/openjdk:21.0
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - maven-deps-{{ checksum "pom.xml" }}
+            - maven-deps-
+      - run:
+          name: Build Maven dependencies
+          command: mvn dependency:resolve dependency:resolve-plugins
+      - snyk/scan:
+          severity-threshold: low
+          cli-version: 1.1308.1
+          monitor-on-build: false
 
   # ==========================================
   # SNYK_CODE JOB - Snyk Code: static analysis (SAST) of src/
   # ==========================================
-  # snyk_code:
-  #   docker:
-  #     - image: cimg/openjdk:21.0
-  #   steps:
-  #     - checkout
-  #     - snyk/scan:
-  #         command: code test
-  #         severity-threshold: high
-  #         cli-version: 1.1308.1
-  #         monitor-on-build: false
+  snyk_code:
+    docker:
+      - image: cimg/openjdk:21.0
+    steps:
+      - checkout
+      - run:
+          name: Build Maven dependencies
+          command: mvn dependency:resolve dependency:resolve-plugins
+      - snyk/scan:
+          command: code test
+          severity-threshold: high
+          cli-version: 1.1308.1
+          monitor-on-build: false
 
   # ==========================================
   # PUBLISH JOB - Build and push Docker image
@@ -186,8 +192,8 @@ workflows:
   build_test_scan_publish_deploy:
     jobs:
       - build
-      # - snyk_scan
-      # - snyk_code
+      - snyk_scan
+      - snyk_code
       - test:
           requires:
             - build
