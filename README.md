@@ -258,7 +258,7 @@ docker push smokinger/taskflowapi:v1.0.0
 ![Render](screenshots/Render.jpg)
 
 ### Security
-
+#### Snyk
 I have scanned smokinger-sh/taskflow-api with Snyk application, here are the top 4 Issues on POM.xml
 ![Snyk](screenshots/synk.jpg)
 
@@ -267,7 +267,8 @@ When I add Synk Scan codes into .circleci/config.yml and run with CircleCI, I co
 ![Snyk_circleci](screenshots/circleci_snyk.jpg)
 
 > [!Caution]
-> Claude suggested that the endpoint returns the LLM output as a raw String, which is derived from user input, so Snyk treats it as reflected HTML. Claude suggest to tweak the code to return JSON instead. I did not implement this due to time constraint, and will take this into consideration in the upcoming Captstone Project. 
+> Claude suggested that the endpoint returns the LLM output as a raw String, which is derived from user input, so Snyk treats it as reflected HTML. Claude suggest to tweak the code to return JSON instead. I did not implement this due to time constraint, and will take this into consideration in the upcoming Captstone Project. What I have done is remove Snyk Scan and Snyk Code as a requirement for Publish. 
+
 
 ```java
 import java.util.Map;
@@ -289,6 +290,12 @@ public Map<String, String> support(@RequestParam String message) {
 
 ```
 
+Publish success with Snyk Scan and Snyk Code:
+![Snyk Publish](screenshots/circleci_synk2.jpg)
+
+#### Dependabot
+I have activated Dependabot for this repo:
+![Dependabot](screenshots/dependabot.jpg)
 
 ---
 ## 🤝 Gratitude
