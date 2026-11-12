@@ -12,7 +12,9 @@ jobs:
   zap-baseline:
     strategy:
       matrix:
-        url: ${{ vars.APP_URL }}, ${{ vars.APP_URL2 }}
+        url: 
+          - ${{ vars.APP_URL }}
+          - ${{ vars.APP_URL2 }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
