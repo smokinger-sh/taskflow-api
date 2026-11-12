@@ -94,6 +94,7 @@ http://localhost:8080
 | 3     |      Server     |    https://taskflowapi-v2-0-0-1.onrender.com/staff |
 | 4     |     Server      |     https://taskflowapi-v2-0-0-1.onrender.com/tasks  |
 
+*Download Postman Collection [here](https://github.com/smokinger-sh/taskflow-api/blob/main/Devops_project.postman_collection.json)*
 
 
 | No | Method | Path | What it does |
@@ -296,6 +297,12 @@ Publish success with Snyk Scan and Snyk Code:
 #### Dependabot
 I have activated Dependabot for this repo:
 ![Dependabot](screenshots/dependabot.jpg)
+
+
+#### Zap Baseline Scan
+- ✅ /tasks [Scan report](https://github.com/smokinger-sh/taskflow-api/actions/runs/43134105621/job/130905140403)
+- ✅ /staff [Scan report](https://github.com/smokinger-sh/taskflow-api/actions/runs/43134105621/job/130905140772)
+
 
 ---
 ## 🤝 Gratitude
