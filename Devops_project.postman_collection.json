@@ -1,0 +1,225 @@
+{
+  "info": {
+    "_postman_id": "df43f618-62a7-4015-b364-3e9588b88b5a",
+    "name": "Devops project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "13238201"
+  },
+  "item": [
+    {
+      "name": "Add Staff",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n//     {\r\n\r\n//   \"name\": \"Joshua\",\r\n//   \"email\": \"joshua@avengers.com\",\r\n//   \"department\": \"SALES\",\r\n//   \"position\": \"Manager\"\r\n  \r\n//   },\r\n\r\n//   {\r\n\r\n//   \"name\": \"Siew Hoon\",\r\n//   \"email\": \"SH@avengers.com\",\r\n//   \"department\": \"ENGINEERING\",\r\n//   \"position\": \"Executive\"\r\n  \r\n//   },\r\n\r\n// {\r\n\r\n//   \"name\": \"Bruce\",\r\n//   \"email\": \"bruce@avengers.com\",\r\n//   \"department\": \"MARKETING\",\r\n//   \"position\": \"Executive\"\r\n  \r\n//   }\r\n\r\n  {\r\n\r\n  \"name\": \"Mary\",\r\n  \"email\": \"mary@avengers.com\",\r\n  \"department\": \"MARKETING\",\r\n  \"position\": \"Executive\"\r\n  \r\n  }\r\n\r\n//error message\r\n\r\n// {\r\n\r\n//   \"name\": null,\r\n//   \"email\": \"joshuaavengers.com\",\r\n//   \"department\": \"SCIENCE\",\r\n//   \"position\": \"Manager\"\r\n  \r\n//   }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/staff",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "staff"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Read Staff",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/staff",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "staff"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Read Tasks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": \"123\",\r\n  \"firstName\": \"Bruce\",\r\n  \"lastName\": \"Banner\",\r\n  \"email\": \"bruce@avengers.com\",\r\n  \"contactNo\": \"12345678\",\r\n  \"jobTitle\": \"Scientist\",\r\n  \"yearOfBirth\": \"1975\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/tasks",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Tasks",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"taskName\": \"Prepare report\",\r\n  \"description\": \"Prepare the monthly report\",\r\n  \"status\": \"PENDING\",\r\n  \"staff\": {\"id\": 1}\r\n}\r\n\r\n{\r\n  \"taskName\": \"Look into customer segmentations\",\r\n  \"description\": \"Prepare segments insights\",\r\n  \"status\": \"PENDING\",\r\n  \"staff\": {\"id\": 2}\r\n}\r\n\r\n// {\r\n//   \"taskName\": \"Install Microsoft Excel\",\r\n//   \"description\": \"Install microsoft excel in powerpoint\",\r\n//   \"status\": \"CANCELLED\",\r\n//   \"staff\": {\"id\": 3}\r\n// }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/tasks",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Task by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"taskName\": \"Install VS Code\",\r\n  \"description\": \"Install VS Code\",\r\n  \"status\": \"IN_PROGRESS\",\r\n  \"staff\": {\"id\": 3}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/tasks/2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "tasks",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update an existing Task",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"taskName\": \"Install VS Code\",\r\n  \"description\": \"Install VS Code\",\r\n  \"status\": \"IN_PROGRESS\",\r\n  \"staff\": {\"id\": 3}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/tasks/2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "tasks",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a Task",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/tasks/2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "tasks",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Mark a task as complete",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/tasks/1/complete",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "tasks",
+            "1",
+            "complete"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AI Chat",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/support?message=how do i install microsoft word",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "support"
+          ],
+          "query": [
+            {
+              "key": "message",
+              "value": "how do i install microsoft word"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    }
+  ]
+}
